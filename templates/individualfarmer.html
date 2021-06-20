@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmEasy</title>
+
+    <link href="../static/css/style.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Josefin+Sans:wght@300&display=swap');
+    </style>
+    <style>
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            background-image: url("https://image.shutterstock.com/image-photo/shelf-brown-wood-plank-board-260nw-1710794752.jpg");
+            background-blend-mode: multiply;
+            background-color: rgba(0, 0, 0, 0.4);
+            background-size: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .farmer_info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .farmer_info > img {
+            height: 175px;
+            width: 175px;
+            border-radius: 87px;
+            margin-bottom: 5px;
+        }
+        .farmer_info > h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 20px;
+            color: #42210D;
+            margin-bottom: 20px;
+        }
+        .questions_answers {
+            display: flex;
+            flex-direction: column;
+        }
+        .question {
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .question > span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            color: lightgreen;
+        }
+        .info_wrapper {
+            display: flex;
+            justify-content: space-between;
+            width: 35vw;
+        }
+        .items_avail {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 10vw;
+        }
+        .title {
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        .item {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 18px;
+            color: lightgreen;
+        }
+    </style>
+
+    
+</head>
+<body style="margin: 0;">
+
+
+    <header id="header" class="fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+        <center>
+          <h1 class="logo"><a href="/">FarmEasy</a></h1>
+        </center>
+    
+          <nav id="navbar" class="navbar">
+            <ul>
+              <li><a class="nav-link scrollto active" href="/">Home</a></li>
+              <li><a class="nav-link scrollto" href="/#about">About</a></li>
+              <li><a class="nav-link scrollto" href="/#services">Features</a></li>
+              <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+              <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav><!-- .navbar -->
+    
+        </div>
+      </header><!-- End Header -->
+
+
+    <div class="wrapper">
+        <div class="farmer_info">
+            <img src="https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tfGVufDB8fDB8&ixlib=rb-1.2.1&w=1000&q=80" alt="Profile Pic">
+            <h3>{{data['name']}}</h3>
+        </div>
+        <div class="info_wrapper">
+            <div class="questions_answers">
+                <span class="question">Business Name: <span>{{data['bname']}}</span></span>
+                <span class="question">How expensie are your goods? <span>{{data['price']}}</span></span>
+                <span class="question">Is your produce organic? <span>{{data['is_organic']}}</span></span>
+                <span class="question">What are your methods of farming? <span>{{data['farmming_method']}}</span></span>
+                <span class="question">Do you use chemicals? <span>{{data['is_chemical']}}</span></span>
+                <span class="question">Items Available: <span>{{data['produce']}}</span></span>
+             
+
+            </div>
+        </div>
+    </div>
+     <!-- Vendor JS Files -->
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="../static/vendor/purecounter/purecounter.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+</body>
+</html>
