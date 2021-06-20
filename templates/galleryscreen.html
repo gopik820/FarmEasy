@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Josefin+Sans:wght@300&display=swap');
+</style>
+<style>
+div.gallery {
+  border: 3px solid #ccc;
+  background-color: #fff;
+}
+
+div.gallery:hover {
+  border: 3px solid rgb(40, 170, 8);
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.backroundimage {
+    background-image: url(static/market.jpg); background-blend-mode: multiply;
+background-color: rgba(0, 0, 0, 0.4);
+background-size: cover; height: 100vh;
+/* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+div.desc {
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 15%;
+  margin: 8px;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+} 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<link href="static/css/style.css" rel="stylesheet">
+
+</head>
+<body style="margin: 0;">
+
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="/">FarmEasy</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="static/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
+          <li><a class="nav-link scrollto" href="/#services">Features</a></li>
+          <li><a class="nav-link scrollto" href="/#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+
+
+
+
+<div class="backroundimage">
+<div class="container">
+    <h2 style="color: #fff; font-size: 40px; font-family: 'DM Sans', sans-serif;">Local Farmers in Your Area</h2>
+    <h4 style="color: #fff; font-size: 25px; font-family: 'DM Sans', sans-serif;">Look at the farmers near you! Click to find out more details!</h4>
+<div style="margin-left: 6vw;">
+{%for i in range(data|length)%}
+
+<div class="responsive">
+    <div class="gallery">
+      <a href={{"/farmer/"+(i|string)}}>
+        <img src="static/icon1.jpg"width="400" height="400">
+      </a>
+      <div class="desc">
+          <p style="font-size: 25px; font-weight: bold;font-family: 'DM Sans', sans-serif;">{{data[i]['name']}}</p>
+          <p style="font-size:large; font-family: 'DM Sans', sans-serif;">Business Name: {{data[i]['bname']}}</p>
+          <p style="font-size:large; font-family: 'DM Sans', sans-serif;">Organic: {{data[i]['is_organic']}}</p>
+          <p style="font-size:large; font-family: 'DM Sans', sans-serif;">Chemicals: {{data[i]['is_chemical']}}</p>
+          <p style="font-size:large; font-family: 'DM Sans', sans-serif;">Expensive: {{data[i]['price']}}</p>
+      </div>
+    </div>
+  </div>
+
+{%endfor%}
+<div class="clearfix"></div>
+</div>
+</body>
+</html>
+
